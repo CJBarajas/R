@@ -1,4 +1,4 @@
-premio=100000000
+premio=20000000
 Simulaciones=1000
 GananciasV<-c()
 set.seed(1996)
@@ -7,7 +7,7 @@ for (j in 1:Simulaciones)
 {
   BoletosInicialesPeje<-1000000
   boletosIniciales=6000000
-  premiosIniciales=20
+  premiosIniciales=100
   ganancias=0  
   boletosRestantes=boletosIniciales
   premiosRestantes=premiosIniciales
@@ -53,14 +53,14 @@ x<-1:1000
 format(GananciasV,scientific=FALSE)
 formatC(GananciasV, digits = 0, format = "f")
 
-plot(x=x,y=GananciasV2,type = "l",xlab = "Simulaciones Acumuladas",ylab = "Valor Esperado", main = "GrÃ¡fico de estabilizaciÃ³n" ,ylim=c(0,700000000))
+plot(x=x,y=GananciasV2,type = "l",xlab = "Simulaciones Acumuladas",ylab = "Valor Esperado", main = "Gráfico de estabilización" ,ylim=c(0,700000000))
 abline(h=339800000,col="red")
 abline(h=500000000,col="blue")
 legend(x = "topright", legend = c("Ganancias Esperadas","Dinero Invertido"), fill = c("red", "blue"), 
        title = "")
 
 
-hist(GananciasV,main = "DistribuciÃ³n de Ganancias Esperadas",xlab = "Ganancia",ylab = "Frecuencia",breaks =25,include.lowest =T ,equidist=T )
+hist(GananciasV,main = "Distribución de Ganancias Esperadas",xlab = "Ganancia",ylab = "Frecuencia",breaks =25,include.lowest =T ,equidist=T )
 abline(col="red",v =500000000 )
 help("hist")
 legend(x = "topright", legend = c("Ganancias Simuladas Acumuladas","Dinero Invertido"), fill = c("gray", "red"), 
